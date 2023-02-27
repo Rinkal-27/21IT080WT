@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator using prompt</title>
+</head>
+<body>
+    <h1>CALCULATOR USING PROMPT</h1>
+    <script>
+        var num1 = prompt("Enter first number");
+        var num2 = prompt("Enter second number");
+        var operator = prompt("Enter operator");
+        var result = 0;
+        if(operator == "+"){
+            result = parseInt(num1) + parseInt(num2);
+        }
+        else if(operator == "-"){
+            result = parseInt(num1) - parseInt(num2);
+        }
+        else if(operator == "*"){
+            result = parseInt(num1) * parseInt(num2);
+        }
+        else if(operator == "/"){
+            result = parseInt(num1) / parseInt(num2);
+        }
+        else{
+            result = "Invalid operator";
+        }
+        document.write("Result is " + result);
+    </script>
+</body>
+</html>
