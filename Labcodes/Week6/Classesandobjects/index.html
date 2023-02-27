@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class demonstration</title>
+</head>
+<body>
+    <h1>Class demonstration</h1>
+    <script>
+        class Student{
+            constructor(name,ID,dob){
+                this.name=name;
+                this.ID=ID;
+                this.dob=dob;
+            }
+            getDetails(){
+                return "Name: "+this.name+" ID: "+this.ID+" Date of birth: "+this.dob;
+            }
+            getAge(){
+                var today=new Date();
+                var birthDate=new Date(this.dob);
+                var age=today.getFullYear()-birthDate.getFullYear();
+                var m=today.getMonth()-birthDate.getMonth();
+                if(m<0 || (m===0 && today.getDate()<birthDate.getDate())){
+                    age--;
+                }
+                return "The age of student is "+age;
+            }
+        }
+        let p1=new Student("John","21IT080","11-06-2003");
+        let p2=new Student("Mary","21IT095","11-06-2002");
+        document.write(p1.getDetails()+"<br>"+p1.getAge()+"<br>");
+        document.write(p2.getDetails()+"<br>"+p2.getAge()+"<br>");
+        //Taking input from user using prompt
+        // let name=prompt("Enter the name of student");
+        // let ID=prompt("Enter the ID of student");
+        // let dob=prompt("Enter the date of birth of student");
+        // let p3=new Student(name,ID,dob);
+        // document.write(p3.getDetails()+"<br>"+p3.getAge()+"<br>");
+    </script>
+</body>
+</html>
